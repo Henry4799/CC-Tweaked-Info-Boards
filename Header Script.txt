@@ -1,0 +1,20 @@
+-- setup stuff 
+local monitor = peripheral.find("monitor")
+
+-- edit colors and text here
+local COLOR_TEXT = colors.yellow
+local COLOR_BG = colors.black
+local TEXT = "Big Header!"
+
+-- centering and whatnot
+monitor.setBackgroundColor(COLOR_BG)
+monitor.setTextScale(4)
+monitor.clear()
+
+local monW, monH = monitor.getSize()
+local col = math.floor((monW - #TEXT) /2) + 1
+local row = math.floor(monH /2) + 1
+
+monitor.setCursorPos(col, row)
+monitor.setTextColor(COLOR_TEXT)
+monitor.write(TEXT)
